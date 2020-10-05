@@ -57,4 +57,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'haml-rails'
 
-gem sqlite3
+gem 'sqlite3'
+
+gem 'serviceworker-rails'

@@ -18,4 +18,3 @@ require("channels")
 
 import '../src/application.css'
 import '../src/semantic.js'
-const images = require.context('../src/images/', true)
