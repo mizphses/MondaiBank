@@ -1,0 +1,58 @@
+@import './semantic.css';
+
+body {
+    font-family: a-otf-ryumin-pr6n, serif !important;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 10.5pt;
+}
+
+h1, h2, h3 {
+    font-weight: 300 !important;
+}
+
+h4, h5, h6 {
+    font-weight: 500;
+    font-family: a-otf-futo-go-b101-pr6n, sans-serif;
+}
+
+.tacenter {
+    text-align: center;
+    line-height: 100%;
+}
+
+.mbt {
+    font-size: 1.2em;
+}
+
+.subj {
+    font-size: 2em;
+}
+
+.mincho {
+    font-family: a-otf-ryumin-pr6n, serif !important;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.fmin {
+    font-family: a-otf-futo-min-a101-pr6n, serif !important;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.fgothic {
+    font-family: a-otf-futo-go-b101-pr6n, sans-serif !important;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.gothic {
+    font-family: a-otf-gothic-bbb-pr6n, sans-serif !important;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.kaigyou {
+    page-break-before: always;
+}
