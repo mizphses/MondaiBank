@@ -1,0 +1,46 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title 問題バンク
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    :javascript
+      (function(d) {
+        var config = {
+          kitId: 'cte1jff',
+          scriptTimeout: 3000,
+          async: true
+        }, h = d.documentElement, t = setTimeout(function() {
+          h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+        }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a;
+        h.className += " wf-loading";
+        tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function() {
+          a = this.readyState;
+          if (f || a && a != "complete" && a != "loaded")
+            return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config)
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s)
+      }
+      )(document);
+  %body
+    .ui.container
+      %div{:style => "height:1em;"}
+      .ui.menu
+        %a.item 問題バンク
+        %a.item{:href => "/home/about"} このシステムについて
+        %a.item{:href => "/home/tos"} ご利用規約
+        %a.item{:href => "mailto:support@ml-mb.jifunze.xyz?bcc=info@gentoo.app&subject=%5BMondaiBank%5D"} サポート・メーリングリスト
+        .right.menu
+          %a.item{:href => "/users/sign_up"} サインアップ
+    .ui.container
+      = yield
