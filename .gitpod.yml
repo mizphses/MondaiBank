@@ -5,7 +5,9 @@ tasks:
   - init: >
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" &&\
       brew install rbenv postgres && brew services start postgresql &&\
-      rbenv install
+      rbenv install &&\
+      gem install bundler &&\
+      bundle install
 github:
     prebuilds:
         pullRequestsFromForks: true
