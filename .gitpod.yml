@@ -3,7 +3,9 @@ ports:
     onOpen: open-preview
 tasks:
   - init: >
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)" &&\
+      brew install rbenv postgres && brew services start postgresql &&\
+      rbenv install
 github:
     prebuilds:
         pullRequestsFromForks: true
