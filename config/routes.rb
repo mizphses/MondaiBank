@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  patch 'quizzes/quizadd/:id' => 'quizzes#quizadd'
+  put 'quizzes/quizadd/:id' => 'quizzes#quizadd'
+  resources :quizzes
+  get 'quizzes/quizedit/:id' => 'quizzes#quizedit'
   devise_for :users
   root to: "home#index"
   get 'home/index'

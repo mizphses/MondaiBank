@@ -33,5 +33,26 @@
           s.parentNode.insertBefore(tk, s)
       }
       )(document);
+    %script{:async => "", :src => "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=MML_SVG", :type => "text/javascript"}
+
   %body
+    %div{:style => "height: 20px"}
+    %h3.tacenter.mbt.fmin MondaiBank高等学校第3学年MB組　第2学期中間考査
+    %h1.tacenter.subj.fgothic= @data.subj
+    %h3.tacenter.gothic 問題用紙
+    %table{:border => "2", :width => "100%"}
+    %td{:style => "padding: 1em;"}
+      %h4.fgothic
+        答案作成上の注意
+    　　%ol
+          %li
+            この問題用紙は2020年10月15日　2限に実施される3年MB組　公民演習（政治経済）の問題です．それまでの日時に開封してはいけません．
+          %li
+            問題用紙の欠落がある場合や破損・印刷ミス・作問ミスがあると思った場合は静かに挙手し，試験監督者の指示を待ちなさい．
+          %li
+            問題を解き始める前に，答案用紙上部の氏名等を記入する欄を事前に埋めておきなさい．
+          %li
+            試験監督者の指示と教室掲示の注意事項を必ず確認してから解答を始めなさい．
+    .kaigyou
+
     = yield

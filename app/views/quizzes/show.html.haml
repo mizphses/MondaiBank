@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @quiz.name
+%p
+  %b Subj:
+  = @quiz.subj
+%p
+  %b Tags:
+  = @quiz.tags
+%p
+  %b Content:
+  = @quiz.content
+
+= link_to 'Edit', edit_quiz_path(@quiz)
+\|
+= link_to 'Back', quizzes_path

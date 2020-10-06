@@ -1,0 +1,16 @@
+= form_with method: :patch, url: "/quizzes/quizadd/"+params[:id] do |f|
+  - if @quiz.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@quiz.errors.count, "error")} prohibited this quiz from being saved:"
+      %ul
+        - @quiz.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :content
+    = f.text_area :content
+  .field
+    = f.label :quiz
+    = f.text_area :quiz
+  .actions
+    = f.submit 'Save'
