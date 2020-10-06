@@ -5,12 +5,12 @@
       %ul
         - @quiz.errors.full_messages.each do |message|
           %li= message
-
-  .field
-    = f.label :content
-    = f.text_area :content
-  .field
-    = f.label :quiz
-    = f.text_area :quiz
-  .actions
-    = f.submit 'Save'
+  .ui.form
+    .field
+      = f.label :content
+      = f.text_area :content, class: "field"
+    .field
+      = f.label :quiz
+      = f.text_area :quiz, class: "field"
+    .actions
+      = f.submit 'Save'

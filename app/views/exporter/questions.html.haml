@@ -1,0 +1,25 @@
+%div{:style => "height: 20px"}
+%h3.tacenter.mbt.fmin= @data.name
+%h1.tacenter.subj.fgothic= @data.subj
+%h3.tacenter.gothic 問題用紙
+%table{:border => "2", :width => "100%"}
+  %td
+    %h4.fgothic 答案作成上の注意
+    .ui.form
+      .ui.transparent.fluid.input
+        %textarea.mincho
+          1. この問題用紙は2020年10月15日　2限に実施される3年MB組　公民演習（政治経済）の問題です．それまでの日時に開封してはいけません．
+          2. 問題用紙の欠落がある場合や破損・印刷ミス・作問ミスがあると思った場合は静かに挙手し，試験監督者の指示を待ちなさい．
+          3. 問題を解き始める前に，答案用紙上部の氏名等を記入する欄を事前に埋めておきなさい．
+          4. 試験監督者の指示と教室掲示の注意事項を必ず確認してから解答を始めなさい．
+          5. この試験の問題用紙（冊子印刷）は　ページ，答案用紙は　枚です．
+.kaigyou
+問題は次のページから始まります．
+.kaigyou
+- @c.each_with_index do |data, i|
+  %p
+    %span.fgothic.noline{:style => "font-size: 1.3em;"}="第#{(i + 1)}問"
+    =safe_join("#{@c[i][0]}".split("rn"),tag(:br))
+  %p.fgothic.noline{:style => "font-size: 1.1em;"} 設問
+  %p=safe_join("#{@q[i][0]}".split("rn"),tag(:br))
+  .kaigyou

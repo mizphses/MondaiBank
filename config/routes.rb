@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'exporter/questions/:id' => 'exporter#questions'
   patch 'quizzes/quizadd/:id' => 'quizzes#quizadd'
   put 'quizzes/quizadd/:id' => 'quizzes#quizadd'
   resources :quizzes

@@ -60,22 +60,26 @@ class QuizzesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
   def quizedit
     @quiz = Quiz.find(params[:id])
   end
   def quizadd
     @quiz = Quiz.find(params[:id])
-    if @quiz.content == nil then
-      c = Array.new
-      q = Array.new
-    else
+    c = Array.new
+    q = Array.new
+    if @quiz.content != nil then
       c.push(@quiz.content.split(',').map { |m| m.delete('[]"\\\\')})
-      q.push(@quiz.quiz.split(',').map { |m| m.delete('[]"\\\\')})
+      if @quiz.quiz != nil then
+        q.push(@quiz.quiz.split(',').map { |m| m.delete('[]"\\\\')})
+      end
     end
     c.push(params[:content])
     q.push(params[:quiz])
     if @quiz.update(:content => c)
-      redirect_to @quiz, notice: 'Quiz was successfully updated.'
+      if @quiz.update(:quiz => q)
+        redirect_to @quiz, notice: 'Quiz was successfully updated.'
+      end
     else
       render :edit
     end
