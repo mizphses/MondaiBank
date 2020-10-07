@@ -1,4 +1,5 @@
 class ExporterController < ApplicationController
+  before_action :authenticate_user!
   layout 'QuestionLayout'
   def questions
     @data = Quiz.find(params[:id])
