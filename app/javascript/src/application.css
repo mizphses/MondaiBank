@@ -1,7 +1,11 @@
 @import './semantic.css';
+@font-face{
+    font-family: "GenEi Koburi";
+    src: url("./otamon_fonts/GenEiKoburiMin6-R.ttf") format("truetype");
+}
 
-body {
-    font-family: a-otf-ryumin-pr6n, serif !important;
+body, input {
+    font-family: 'Noto Sans JP', serif !important;
     font-weight: 300;
     font-style: normal;
     font-size: 10.5pt;
@@ -30,7 +34,7 @@ h4, h5, h6 {
 }
 
 .mincho {
-    font-family: a-otf-ryumin-pr6n, serif !important;
+    font-family: "GenEi Koburi", 'Times New Roman', Times, serif !important;
     font-weight: 300;
     font-style: normal;
 }

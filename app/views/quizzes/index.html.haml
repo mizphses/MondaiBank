@@ -7,20 +7,23 @@
       %th Subj
       %th Tags
       %th Content
+      %th Admin
       %th
       %th
       %th
 
   %tbody
-    - @quizzes.each do |quiz|
+    - Quiz.where(:admin => current_user.email).each do |quiz|
       %tr
         %td= quiz.name
         %td= quiz.subj
         %td= quiz.tags
         %td= quiz.content
-        %td= link_to 'Show', quiz
-        %td= link_to 'Edit', edit_quiz_path(quiz)
-        %td= link_to 'Destroy', quiz, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= quiz.admin
+        %td= link_to '情報を表示', quiz
+        %td= link_to '問題表紙情報を編集', edit_quiz_path(quiz)
+        %td= link_to '問題を編集', edit_quiz_path(quiz)
+        %td= link_to '削除', quiz, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

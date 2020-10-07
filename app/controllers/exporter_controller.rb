@@ -5,9 +5,9 @@ class ExporterController < ApplicationController
     @c = Array.new
     @q = Array.new
     if @data.content != nil then
-      @c.push(@data.content.split(',').map { |m| m.delete('[]"\\')})
+      @c.push((@data.content.gsub(/(\\r\\n|\\r|\\n)/, "\n")).split(',').map { |m| m.delete('[]"')})
       if @data.quiz != nil then
-        @q.push(@data.quiz.split(',').map { |m| m.delete('[]"\\')})
+        @q.push((@data.quiz.gsub(/(\\r\\n|\\r|\\n)/, "\n")).split(',').map { |m| m.delete('[]"')})
       end
     end
   end

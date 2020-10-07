@@ -60,3 +60,5 @@ gem 'haml-rails'
 gem 'sqlite3'
 
 gem 'serviceworker-rails'
+
+gem 'jquery-rails'
